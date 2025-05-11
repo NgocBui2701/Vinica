@@ -1,0 +1,84 @@
+content{
+    font-family: Inria Serif, serif;
+    font-size: 20px;
+}
+.container_navbar_fluid {
+    width: 100%;
+    height: 100px;
+    padding: 3%;
+    padding-bottom: 5%;
+    margin: 0;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    justify-content: space-between; /* Proper alignment for content */
+}
+
+.navbar_logo {
+    margin-right: 5%;
+    margin-left: 5%; /* Adjusted for better scaling */
+    width: 10%;
+    height: 60px;
+}
+
+/* Nav list container */
+.navbar_list {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    list-style: none; /* Removes default bullet points from list */
+    margin: 0;
+    margin-right: 100px;
+    padding: 0;
+}
+
+/* Individual list items */
+.navbar_list .navbar_item {
+    width: auto; /* Auto for adaptive spacing */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-left:5%;
+    padding-bottom: 20%;
+    align-items: center;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 10px; /* Padding for clickable area */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+    
+}
+.reservation{
+    background-color: #826F60;
+    border-radius: 10px;
+    color: #fff
+    
+}
+.navbar_logo_img{
+    width: 100%;
+    min-height: 100%;
+    object-fit:cover;
+}
+.navbar_list .navbar_item:hover {
+    background-color: #b3b3b3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* For tablets (screen widths 768px and smaller) */
+@media screen and (max-width: 768px) {
+    .container_navbar_fluid {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 2%;
+        height: auto; /* Adjust to content height */
+    }
+
+    .navbar_logo {
+        margin: 0 auto; 
+    }
+}
