@@ -1,0 +1,131 @@
+:root {
+    --circle-diameter: 25px;
+    --border-thickness: 2px;
+    --facebook-color: #1877F2;
+    --instagram-gradient: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    --instagram-color: #E1306C;
+    --yt-color: #FF0000;
+}
+.footer {
+    background-color: #ececec;
+    padding: 40px 10%;
+    background-image: url('../img/footer_bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+} 
+.footer-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #826F60;
+    padding: 30px 0;
+}  
+.footer-column {
+    flex: 1 1 150px;
+    margin: 10px;
+} 
+.logo-column {
+    flex: 1 1 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+} 
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+} 
+.footer-column h6 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+} 
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+.footer-column ul li {
+    margin-bottom: 8px;
+} 
+.footer-column h6, ul li a {
+    text-decoration: none;
+    color: #826F60;
+} 
+.footer-column ul li a:hover {
+    text-decoration: underline;
+} 
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    overflow: hidden;
+} 
+.social-icons a i {
+    transition: color 0.3s ease;
+}
+.social-icons a.fb-icon {
+    color: var(--facebook-color);
+}
+.social-icons a.fb-icon:hover {
+    background-color: var(--facebook-color);
+    color: white;
+}
+.social-icons a.ig-icon {
+    color: var(--instagram-color);
+}
+.social-icons a.ig-icon:hover {
+    background: var(--instagram-gradient);
+    color: white;
+}
+.social-icons a.yt-icon {
+    color: var(--yt-color);
+}
+.social-icons a.yt-icon:hover {
+    background-color: var(--yt-color);
+    color: white;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #826F60;
+}
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 20px;
+    }
+    .footer-logo {
+        max-height: 50px;
+    }
+    .footer-column h6 {
+        font-size: 13px;
+    }
+    .footer-column ul li {
+        font-size: 14px;
+    }
+    .footer-bottom p {
+        font-size: 13px;
+    }
+}
+  

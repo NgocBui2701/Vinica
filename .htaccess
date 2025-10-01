@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /VINICA/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# Prevent access to sensitive directories and files
+# <IfModule mod_authz_core.c>
+#    <FilesMatch "^(DAO|vendor|controller|model|DAO/config\.php)$">
+#        Require all denied
+#    </FilesMatch>
+# </IfModule>
+
+# Ngăn liệt kê thư mục
+Options -Indexes
+
+# Bảo vệ file .htaccess
+<Files .htaccess>
+    Require all denied
+</Files>

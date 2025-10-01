@@ -45,8 +45,23 @@ function pdo_query($sql)
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
-        $rows = $stmt->fetchAll();
+
+        // Định vị tham số với kiểu dữ liệu tương ứng
+        // Giả sử các tham số được đặt theo vị trí
+        foreach ($sql_args as $key => $value) {
+            if (is_int($value)) {
+                $stmt->bindValue($key + 1, $value, PDO::PARAM_INT);
+            } elseif (is_bool($value)) {
+                $stmt->bindValue($key + 1, $value, PDO::PARAM_BOOL);
+            } elseif (is_null($value)) {
+                $stmt->bindValue($key + 1, $value, PDO::PARAM_NULL);
+            } else {
+                $stmt->bindValue($key + 1, $value, PDO::PARAM_STR);
+            }
+        }
+        $stmt->execute(); // Thực thi câu lệnh mà không cần truyền tham số vì chúng đã được định vị
+
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows;
     } catch (PDOException $e) {
         throw $e;

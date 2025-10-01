@@ -1,0 +1,66 @@
+.container_navbar_fluid {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    padding-left: 30px;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.navbar_logo {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+}
+.navbar {
+    flex: 1;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:hover {
+    background-color: #b3b3b3;
+}
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+.dropdown-menu {
+    background-color: #ececec !important;
+    border: none !important;
+}
+.dropdown-item.dropdown-item:hover,
+.dropdown-item.dropdown-item:focus {
+    background-color: #b3b3b3 !important;
+}
+.navbar-nav .nav-link {
+    color: #000;
+    transition: color 0.3s ease-in-out;
+}
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+    color: #826F60 !important;
+}
+.nav-item.items::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #826F60;
+    transition: width 0.3s ease-in-out;
+}
+.nav-item {
+    position: relative;
+}
+.nav-item.items:hover::after {
+    width: 50%;
+}
